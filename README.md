@@ -6,11 +6,11 @@
 
 ## Content
 
+> - [0. ProjectRoute](#project-route)
 > - [1. (Mac) Project Setup](#mac-project-setup)
-> - [2. Start](#start)
+> - [2. (Windows) Project Setup](#windows-project-setup)
 
-## mac project setup
-
+## project route
 ### 1. 프로젝트 경로
 
 > 아래 경로를 참고하여 환경 세팅을 해주세요. <br>
@@ -25,7 +25,7 @@
         + README.md <>
         + .gitignore <br>
 
-
+## mac project setup
 
 ### 1-1. 환경 세팅
 
@@ -73,3 +73,54 @@
 ```
 
 > runserver 이후, url 경로에 **http://127.0.0.1:8000/** 를 입력하여 웹 서비스를 이용할 수 있습니다. <br>
+
+## windows project setup
+
+### 2-1. 환경 세팅
+
+- git clone
+
+  ```
+  $ git clone https://github.com/SchoolPizza/TECT
+  $ cd TECT
+  ```
+
+- 가상환경 생성 및 활성화
+
+  ```
+  $ python -m venv bdcv
+  $ source venv/Scripts
+  $ activate
+  (venv) $
+  ```
+
+- 필요 패키지 설치
+
+  ```
+  (venv) $ cd tect
+  (venv) $ pip install -r requirements.txt
+  ```
+
+### 1-2. Backend : Django 세팅
+
+- Django Setup
+
+  ```
+  (venv) $ python manage.py makemigrations
+  (venv) $ python manage.py migrate
+  ```
+
+- Django Admin
+
+```
+(venv) $ python manage.py createsuperuser
+```
+
+- Runserver
+
+```
+(venv) $ python manage.py runserver
+```
+
+> runserver 이후, url 경로에 **http://127.0.0.1:8000/** 를 입력하여 웹 서비스를 이용할 수 있습니다. <br>
+
