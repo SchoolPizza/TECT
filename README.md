@@ -1,15 +1,20 @@
 # :seedling:TECT
-### 신은지, 양석진, 최세화
-> 충북대학교 소프트웨어학과 2021년도 졸업작품 프로젝트 TECT의 repo입니다. 
 
-## Content 
+### 신은지, 양석진, 최세화
+
+> 충북대학교 소프트웨어학과 2021년도 졸업작품 프로젝트 TECT의 repo입니다.
+
+## Content
+
 > - [1. (Mac) Project Setup](#mac-project-setup)
 > - [2. Start](#start)
 
 ## mac project setup
+
 ### 1. 프로젝트 경로
+
 > 아래 경로를 참고하여 환경 세팅을 해주세요. <br>
-        
+
         + TECT  <br>
         | \ + tect  <br>
         |   | \ + account <br>
@@ -19,48 +24,52 @@
         | + requirements.txt <br>
         + README.md <>
         + .gitignore <br>
-        
-        
+
+
+
 ### 1-1. 환경 세팅
 
-- git clone 
+- git clone
 
   ```
   $ git clone https://github.com/SchoolPizza/TECT
   $ cd TECT
   ```
-  
-- 가상환경 생성 및 활성화 
+
+- 가상환경 생성 및 활성화
 
   ```
   $ python3 -m venv bdcv
   $ source bdcv/bin/activate
   (bdcv) $
   ```
+
 - 필요 패키지 설치
 
   ```
   (bdcv) $ cd tect
   (bdcv) $ pip3 install -r requirements.txt
   ```
- 
+
 ### 1-2. Backend : Django 세팅
+
 - Django Setup
 
   ```
   (bdcv) $ python3 manage.py makemigrations
   (bdcv) $ python3 manage.py migrate
   ```
-  
- - Django Admin
 
-  ```
-  (bdcv) $ python3 manage.py createsuperuser
-  ```
-  
- - Runserver
+- Django Admin
 
-  ```
-  (bdcv) $ python3 manage.py runserver
-  ```
+```
+(bdcv) $ python3 manage.py createsuperuser
+```
+
+- Runserver
+
+```
+(bdcv) $ python3 manage.py runserver
+```
+
 > runserver 이후, url 경로에 **http://127.0.0.1:8000/** 를 입력하여 웹 서비스를 이용할 수 있습니다. <br>
