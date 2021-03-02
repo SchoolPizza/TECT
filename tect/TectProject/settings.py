@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 회원 기능과 관련된 앱
+    'account', 
+    # 웹 페이지 구성과 관련된 앱 
+    'tectapp',
 ]
 
 MIDDLEWARE = [
