@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse,Http404
 from .models import Book_list, Recommended_list
-import scripts.db as db
-import scripts.delete as delete
+import script.db as db
+import script.delete as delete
 
 # Create your views here.
 def index(request):
