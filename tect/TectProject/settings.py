@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'account', 
     # 웹 페이지 구성과 관련된 앱 
     'tectapp',
+    # 샘플 책 추천과 관련된 앱
+    'recommend',
 ]
 
 MIDDLEWARE = [
