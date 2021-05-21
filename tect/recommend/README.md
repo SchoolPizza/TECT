@@ -8,7 +8,7 @@
   (venv) $ python3 manage.py makemigrations recommend
   (venv) $ python3 manage.py migrate recommend
   ```
-> DB 생성 이후, tect/scripts/db.py 의 12번째 줄 csv_path를 해당 로컬 컴퓨터의 book.csv 경로로 바꾼다.<br>
+> DB 생성 이후, tect/script/db.py 의 12번째 줄 csv_path를 해당 로컬 컴퓨터의 book.csv 경로로 바꾼다.<br>
 
 - Runserver
 
