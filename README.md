@@ -9,6 +9,7 @@
 > - [0. ProjectRoute](#project-route)
 > - [1. (Mac) Project Setup](#mac-project-setup)
 > - [2. (Windows) Project Setup](#windows-project-setup)
+> - [3. Docker Setup](#docker-setup)
 
 ## project route
 ### 1. 프로젝트 경로
@@ -124,3 +125,37 @@
 
 > runserver 이후, url 경로에 **http://127.0.0.1:8000/** 를 입력하여 웹 서비스를 이용할 수 있습니다. <br>
 
+
+## docker setup
+
+### 3-1. Django Secret Key 추가 
+
+- tect/Dockerfile : 16번 라인에 환경변수에 저장된 secret key 입력 후 저장 
+
+  ```
+  # secret key 추가 
+  ENV TECT_SECRET_KEY 환경변수로_저장된_시크릿키
+  ```
+  
+### 3-2. Docker 
+
+- docker compose build & up : 빌드 후 실행
+
+  ```
+  (venv) $ cd TECT
+  (venv) $ docker-compose up --build
+  ```
+
+- docker compose 실행
+
+  ```
+  (venv) $ docker-compose up 
+  ```
+  
+- 실행 성공 후 기존 사용하던 url 이용해서 프로젝트 접속
+  
+- docker compose 중지
+
+  ```
+  (venv) $ docker-compose stop 
+  ```
