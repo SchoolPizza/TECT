@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  # mongo_db:
+  #     image: mongo:latest
+  #     restart: unless-stopped
+  #     networks:
+  #        - app-tier
+  #     volumes:
+  #        - ./mongo/db:/data/db
+  #     ports:
+  #       - "27017:27017"
+
+  django_app:
+    build:
+      context: ./tect
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    # depends_on:
+    #   - mongo_db
+    # links:
+    #   - mongo_db:mongo_db
+    restart: always
+    volumes:
+      - ./tect:/app
+    env_file:
+      - ./tect/env.dev
+    networks:
+      - app-tier
+
+networks:
+  app-tier:
+    driver: bridge
+
+volumes:
+  static_volume:

@@ -3,7 +3,7 @@
 
 <form action="." method="post"> {% csrf_token %}
     {{ form.as_table }} 
-    <input type="submit" value="Submit" class="btn btn-primary btn-sm">
+    <input type="submit" value="Submit">
 </form>
 
 <br/><br/>
@@ -14,5 +14,5 @@
     {% endfor %}
 
 {% elif search_term %}<!-- 검색란이 공란인지 확인-->
-    <b><i>Search Word({{ search_term }}) Not Found</i></b>
+    <b>검색하신 ({{ search_term }}) 은 존재하지 않는 상품입니다.</b>
 {% endif %}
