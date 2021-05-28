@@ -32,7 +32,7 @@
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Main</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'search' %}">Search</a></li>
-                        <li class="nav-item"><a class="nav-link" href="git">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/SchoolPizza">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                                 </ul>
                                 {% endfor %}
                             {% elif search_term %}<!-- 검색란이 공란인지 확인-->
-                                <b>검색하신 ({{ search_term }}) 은 존재하지 않는 상품입니다.</b>
+                                <h2 style="color:#ffc107" class=" font-weight-bold">검색하신 ({{ search_term }}) 은 존재하지 않는 상품입니다.</h2>
                             {% endif %}
 
 
@@ -105,16 +105,6 @@
                         </ul>
                     </div>
                     {% endif %}
-
-
-
-
-
-
-
-
-
-
 
                         </div>
                     </div>
