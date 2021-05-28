@@ -9,7 +9,7 @@ from sklearn.metrics.pairwise import linear_kernel
 
 def run():
 		# http://localhost:8000/recommend/dbinstall/ 하기 전, book.csv의 절대경로를 적어줄 것!
-		csv_path = '/Users/user/Desktop/TECT/tect/script/book.csv'
+		csv_path = 'C:\\Users\\seok_jin\\Desktop\\FBI\\TECT\\tect\\script\\book.csv'
 		with open(csv_path, 'rt', encoding='UTF-8') as csvfile:
 			reader = csv.DictReader(csvfile)
 			for row in reader:
