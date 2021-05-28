@@ -6,23 +6,31 @@ import script.delete as delete
 from django.views.generic import FormView
 from .forms import SearchForm
 from django.db.models import Q
+from .paginator import my_paginator
+
 
 # Create your views here.
 def index(request):
-	all_books = Book_list.objects.all()
-	context = {'all_books':all_books}
-	return render(request, 'recommend/index.html',context)
+	all_book = Book_list.objects.all()
+	page = request.GET.get('page', 1)
+	all_books, page_range = my_paginator(all_book, page, num=20, page_num_range=10)
+	
+	context = {'all_books' : all_books,'page_range':page_range}
+	return render(request, 'recommend/index.html', context)
+
 
 def details(request, book_id):
 	book = Recommended_list.objects.get(idx=book_id)
 	all_books = Book_list.objects.all()
 	li = []
-	li.append(all_books[book.rec1-1].name)
-	li.append(all_books[book.rec2-1].name)
-	li.append(all_books[book.rec3-1].name)
-	li.append(all_books[book.rec4-1].name)
-	li.append(all_books[book.rec5-1].name)
-	
+	li.append(all_books[book.rec1-1])
+	li.append(all_books[book.rec2-1])
+	li.append(all_books[book.rec3-1])
+	li.append(all_books[book.rec4-1])
+	li.append(all_books[book.rec5-1])
+	print(type(book.idx.genre))
+	print(book.idx.genre)
+
 	context = {'book':book, 'li':li}
 	return render(request, 'recommend/details.html', context)
 
@@ -58,5 +66,3 @@ class SearchFormView(FormView):
 		context['object_list'] = book_list
 
 		return render(self.request, self.template_name, context)
- 
- 
